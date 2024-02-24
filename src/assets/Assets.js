@@ -10,7 +10,7 @@ import EYE_SLASH from './eyeSlash.svg';
 import DISABLED_DELETE from './disabledDelete.svg';
 import DISABLED_EDIT from './disabledEdit.svg';
 
-export default {
+export const  Assets = {
     CART, 
     DOLLAR,
     CANCEL,

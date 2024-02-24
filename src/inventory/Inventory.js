@@ -1,11 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import Assets from "../assets/Assets";
+import { Assets } from "../assets/Assets";
 import InventoryTable from "../components/inventoryTable/InventoryTable";
 import Card from "../components/card/Card";
 
-import { getOutOfStocksProduct, getTotalAmount, getTotalCategory } from "../helpers/helpers";
+import {
+  getOutOfStocksProduct,
+  getTotalAmount,
+  getTotalCategory,
+} from "../helpers/helpers";
 import { TITLE } from "./inventory.constants";
 
 import styles from "./inventory.module.scss";
@@ -13,7 +17,7 @@ import styles from "./inventory.module.scss";
 const Inventory = (props) => {
   const { isAdmin } = props;
 
- const inventoryData = useSelector(state=> state.changeTheData) || [];
+  const inventoryData = useSelector((state) => state.changeTheData) || [];
 
   return (
     <div className={styles.container}>

@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useCallback, useEffect } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import cx from "classnames";
 
@@ -32,7 +32,7 @@ const EditForm = ({ formValues, hideModal }) => {
     });
   };
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = () => {
     const newFormValues = {
       ...formValues,
       category: state.category.val,
@@ -42,7 +42,7 @@ const EditForm = ({ formValues, hideModal }) => {
     };
     dispatchToReducer(editRow(newFormValues));
     hideModal();
-  }, [state]);
+  };
 
   return (
     <div className={styles.container}>

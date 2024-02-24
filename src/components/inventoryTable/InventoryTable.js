@@ -11,7 +11,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Button from "@mui/material/Button";
 
-import Assets from "../../assets/Assets";
+import { Assets } from "../../assets/Assets";
 import Modal from "../modal/Modal";
 import EditForm from "../editForm/EditForm";
 
@@ -41,7 +41,7 @@ const InventoryTable = (props) => {
 
   const hideModal = useCallback(() => {
     setIsmodalVisible(false);
-  }, [isModalVisible]);
+  }, [setIsmodalVisible]);
 
   const handleEyeClick = (name) => {
     if (disabledRow.includes(name)) {

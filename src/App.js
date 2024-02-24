@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
@@ -14,14 +14,14 @@ function App() {
 
   const dispatch = useDispatch();
 
-  const getInvetoryData = async () => {
+  const getInvetoryData = useCallback(async () => {
     const data = await getInvetoryDataFormApi();
     dispatch(setTableData(data));
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     getInvetoryData();
-  }, []);
+  }, [getInvetoryData]);
 
   const handleChangeAdmin = () => {
     setIsAdmin(!isAdmin);
