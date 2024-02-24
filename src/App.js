@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import Switch from "@mui/material/Switch";
+import Typography from "@mui/material/Typography";
+
+import Inventory from "./inventory/Inventory";
+import { getInvetoryDataFormApi } from "./actions/api.actions";
+import { setTableData } from "./actions/actions";
+
+import "./App.css";
 
 function App() {
+  const [isAdmin, setIsAdmin] = useState(true);
+
+  const dispatch = useDispatch();
+
+  const getInvetoryData = async () => {
+    const data = await getInvetoryDataFormApi();
+    dispatch(setTableData(data));
+  };
+
+  useEffect(() => {
+    getInvetoryData();
+  }, []);
+
+  const handleChangeAdmin = () => {
+    setIsAdmin(!isAdmin);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="header">
+        <Typography variant="h5" component="h3">
+          Admin
+        </Typography>
+        <Switch onChange={handleChangeAdmin} value={isAdmin} />
+        <Typography variant="h5" component="h3">
+          User
+        </Typography>
       </header>
+      <Inventory isAdmin={isAdmin} />
     </div>
   );
 }

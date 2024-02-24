@@ -1,0 +1,69 @@
+@import '../../styles/mixin.scss';
+
+.container {
+    max-width: 48rem;
+    .title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        padding:1.6rem  1.6rem 0;
+    }
+    .productName {
+        font-size: 1.2rem;
+        padding: 0 1.6rem;
+    }
+    .formContainer {
+        display: flex;
+        flex-wrap: wrap;
+        .inputBox {
+            flex: 50%;
+            display: flex;
+         flex-direction: column;
+         padding: 1.6rem;
+         box-sizing: border-box;
+         font-size: 1.4rem;
+         font-weight: 600;
+           .inputField {
+              margin-top: 0.8rem;
+              border: 0.1rem solid $black;
+              border-radius: 0.4rem;
+              padding: 0.8rem;
+           }
+        }
+        .errorMessage {
+            color: red;
+            font-size: 1.2rem;
+            margin-top: 0.4rem;
+          }
+        
+          .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 1.6rem 1.6rem;
+            .primaryButton {
+                margin-right: 1.6rem;
+                cursor: pointer;
+                background-color: $merchantBlue;
+                border: none;
+                padding: 1.2rem;
+                width: 8rem;
+                color: $white;
+                border-radius: 0.4rem;
+            }
+            .disableButton {
+                background-color: $platinum;
+                cursor: not-allowed;
+            }
+            .secondaryButton {
+                cursor: pointer;
+                border:  0.1rem solid $merchantBlue;
+                background-color: $white;
+                padding: 1.2rem;
+                width: 8rem;
+                color: $merchantBlue;
+                border-radius: 0.4rem;
+            }
+        }
+    }
+}

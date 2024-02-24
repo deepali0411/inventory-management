@@ -1,0 +1,21 @@
+@import '../../styles/mixin.scss';
+
+.container {
+    border: 0.2rem solid $waterLeaf;
+    padding: 1.6rem;
+    width: 24rem;
+    border-radius: 0.8rem;
+    display: flex;
+    background-color: $powderBlue;
+    .text {
+        margin-left: 1.6rem;
+        .title {
+           font-size: 1.4rem;
+           margin-bottom: 0.8rem;
+        }
+        .amount {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+    }
+}
